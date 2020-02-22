@@ -9,12 +9,14 @@ class CustomerInfo {
   int waist;
   int footSize;
 
-  CustomerInfo({@required this.gender, @required this.height, this.neckWidth, this.chestWidth,
-      this.hipWidth, this.waist, this.footSize});
+  CustomerInfo(
+      {@required this.gender,
+      @required this.height,
+      this.neckWidth,
+      this.chestWidth,
+      this.hipWidth,
+      this.waist,
+      this.footSize});
 }
 
-enum Gender {
-  male,
-  female,
-  junior
-}
+enum Gender { male, female, junior }
