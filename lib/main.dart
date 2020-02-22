@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         // #e56b2f
         primarySwatch: Colors.amber,
       ),
-      home: ResultScreen(),
+      home: StartScreen(_title),
     );
   }
 }

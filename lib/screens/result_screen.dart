@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizeguide/backend/costumer_info.dart';
 import 'package:flutter_sizeguide/screens/page.dart';
 import 'package:flutter_sizeguide/widgets/results/result_list.dart';
 
 class ResultScreen extends StatelessWidget {
+  final CustomerInfo _customerInfo; //TODO: USE THIS CUSTOMER INFO TO GET RESULTS
+
+  ResultScreen(this._customerInfo);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class ResultScreen extends StatelessWidget {
         onMobile: (BuildContext context) {
           return ResultList(
               onTap: (result) {
-                Navigator.of(context).pop(result);
+                Navigator.of(context).pop(result); //Todo: fix den her så man kommer ind på resultatet ikke bare poper af stacken
               }
           );
         },
