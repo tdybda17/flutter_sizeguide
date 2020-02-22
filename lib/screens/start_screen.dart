@@ -20,10 +20,20 @@ class StartScreen extends StatelessWidget {
         body: Center(
           child: new Column(
             children: <Widget>[
-              SizeInputField('Height', heightTextController)
+              SizeInputField('Højde', heightTextController),
+              SizeInputField('Halsmål', heightTextController),
+              SizeInputField('Brystmål', heightTextController),
+              SizeInputField('Hoftemål', heightTextController),
+              SizeInputField('Livvide', heightTextController),
+              SizeInputField('Fodlængde', heightTextController)
             ],
           ),
         ),
     );
+  }
+
+
+  void navigateToResultScreen(){
+    _customerInfo.height = int.parse(heightTextController.text);
   }
 }

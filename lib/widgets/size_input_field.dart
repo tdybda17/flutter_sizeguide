@@ -5,7 +5,7 @@ Widget SizeInputField(final String typeOfInput, TextEditingController textContro
   return new Column(
     children: <Widget>[
       new Container(
-        margin: const EdgeInsets.all(4.0),
+        margin: const EdgeInsets.only(bottom: 1, top: 1),
         child: new Text(
             typeOfInput,
             style: new TextStyle(fontSize: 18),
@@ -24,22 +24,18 @@ Widget createInputTextField(String typeOfInput, TextEditingController textContro
     children: <Widget>[
       Flexible(
         child: new Container(
-            margin: const EdgeInsets.all(8.0),
+            margin: const EdgeInsets.all(5.0),
             decoration: new BoxDecoration(border: Border.all()),
-            child: new TextField(
-              controller: textController,
-              onSubmitted: _handleSubmitted,
-              decoration: InputDecoration.collapsed(
-              hintText: "AAA"),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: new TextField(
+                controller: textController,
+                decoration: InputDecoration.collapsed(
+                ),
+              ),
             )
           )
         ),
     ],
   );
-}
-
-void _handleSubmitted(String inputField) {
-  //Do something
-
-  return;
 }
