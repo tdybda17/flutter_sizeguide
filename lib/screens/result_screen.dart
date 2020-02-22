@@ -18,7 +18,7 @@ class ResultScreen extends StatelessWidget {
         onMobile: (BuildContext context) {
           return ResultList(
               onTap: (result) {
-                Navigator.of(context).pop(result);
+                Navigator.of(context).pop(result); //Todo: fix den her så man kommer ind på resultatet ikke bare poper af stacken
               }
           );
         },
