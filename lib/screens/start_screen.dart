@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sizeguide/backend/costumer_info.dart';
+import 'package:flutter_sizeguide/screens/result_screen.dart';
 import 'package:flutter_sizeguide/widgets/size_input_field.dart';
 
-//TODO: make this stateful so the navigate button works
-class StartScreen extends StatelessWidget {
+class StartScreen extends StatefulWidget {
   final String _title;
+
+  StartScreen(this._title);
+
+  @override
+  StartScreenState createState() => StartScreenState();
+}
+
+
+class StartScreenState extends State<StartScreen> {
   TextEditingController heightTextController = new TextEditingController();
   TextEditingController neckWidthTextController = new TextEditingController();
   TextEditingController chestWidthTextController = new TextEditingController();
@@ -12,14 +21,12 @@ class StartScreen extends StatelessWidget {
   TextEditingController waistTextController = new TextEditingController();
   TextEditingController footSizeTextController = new TextEditingController();
 
-  StartScreen(this._title);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(_title),
+        title: Text(widget._title),
       ),
       body: Center(
         child: new Column(
@@ -34,7 +41,7 @@ class StartScreen extends StatelessWidget {
               margin: new EdgeInsets.symmetric(horizontal: 4.0),
               child: new IconButton(
                   icon: new Icon(Icons.forward),
-                  onPressed: () => _navigateToResultScreen
+                  onPressed: () => _navigateToResultScreen()
               ),
             ),
           ],
@@ -45,6 +52,7 @@ class StartScreen extends StatelessWidget {
 
   void _navigateToResultScreen() {
     CustomerInfo customerInfo = createCustomerInfoObject();
+    Navigator.push(context, new MaterialPageRoute(builder: (context) => new ResultScreen(customerInfo)));
   }
 
   CustomerInfo createCustomerInfoObject() {
@@ -55,7 +63,7 @@ class StartScreen extends StatelessWidget {
     int hipWidth = getInfoFromTextController(hipWidthTextController);
     int waist = getInfoFromTextController(waistTextController);
     int footSize = getInfoFromTextController(footSizeTextController);
-    CustomerInfo customerInfo = new CustomerInfo(
+    return new CustomerInfo(
       gender: Gender.male,
       height: height,
       neckWidth: neckWidth,
@@ -64,7 +72,7 @@ class StartScreen extends StatelessWidget {
       waist: waist,
       footSize: footSize,
     );
-    print('h:$height and neck:$neckWidth');
+
   }
 
   int getInfoFromTextController(TextEditingController textController) {
