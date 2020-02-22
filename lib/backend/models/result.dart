@@ -1,4 +1,4 @@
-import 'package:flutter_sizeguide/models/company.dart';
+import 'package:flutter_sizeguide/backend/models/company.dart';
 import 'package:meta/meta.dart';
 
 class Result {
