@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: _title,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        // #e56b2f
+        primarySwatch: Colors.amber,
       ),
       home: StartScreen(_title),
     );
