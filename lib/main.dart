@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sizeguide/screens/result_screen.dart';
 import 'package:flutter_sizeguide/screens/start_screen.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         // #e56b2f
         primarySwatch: Colors.amber,
       ),
-      home: StartScreen(_title),
+      home: ResultScreen(),
     );
   }
 }
